@@ -7,8 +7,8 @@ set -e
 apt-get update
 
 # Clone Upstream
-git clone --recurse-submodules https://github.com/hyprwm/hyprlang -b v0.1.5
-cd hyprlang
+git clone --recurse-submodules https://github.com/hyprwm/hyprutils -b v0.1.5
+cd hyprutils
 cp -rvf ../debian ./
 
 # Get build deps
