@@ -1,41 +1,28 @@
-Source: xdg-desktop-portal-hyprland
+Source: hyprutils
 Section: main
 Priority: optional
 Maintainer: ferrreo <harderthanfire@gmail.com>
 Standards-Version: 4.6.1
 Build-Depends: debhelper-compat (= 13),
-               qt6-base-dev,
-               qt6-wayland-dev,
-               meson,
-               build-essential,
-               ninja-build,
-               libpipewire-0.3-dev,
                cmake-extras,
-               libgbm-dev,
-               libdrm-dev,
                cmake,
-               wayland-protocols,
-               uuid-dev,
-               libinih-dev,
-               libsystemd-dev,
-               libsdbus-c++-dev,
+               libpixman-1-dev
 Rules-Requires-Root: no
 
-Package: xdg-desktop-portal-hyprland
+Package: libhyprutils
 Architecture: linux-any
 Depends:
          ${shlibs:Depends},
          ${misc:Depends},
-         hyprland,
-         qt6-wayland,
-         xdg-desktop-portal,
-Provides: xdg-desktop-portal-hyprland, xdg-desktop-portal-backend (= 1.7.1)
-Description: Desktop portal for hyprland
+         libpixman-1-0
+Provides: hyprutils (= ${binary:Version}),
+Description: Hyprland utilities library used across the ecosystem.
 
-Package: xdg-desktop-portal-hyprland-dev
+Package: libhyprutils-dev
 Architecture: linux-any
 Depends:
          ${shlibs:Depends},
          ${misc:Depends},
-         xdg-desktop-portal-hyprland (= ${binary:Version}),
-Description: Development files for Desktop portal for hyprland
+         libhyprutils (= ${binary:Version}),
+Provides: hyprutils-dev (= ${binary:Version}),
+Description: Development files for the Hyprland utilities library used across the ecosystem.
