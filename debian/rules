@@ -12,6 +12,7 @@ override_dh_auto_configure:
 override_dh_install:
 	DESTDIR=debian/tmp cmake --install build
 	dh_install
+	rm -rfv debian/libhyprlang/usr/lib/*/pkgconfig/hyprutils.pc
 ## === End end of region ===
 
 ## This here will start the build:
